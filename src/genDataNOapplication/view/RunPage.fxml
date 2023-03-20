@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.RadioButton?>
+
+
+
+<AnchorPane prefHeight="600.0" prefWidth="1340.0" stylesheets="@../../../resources/bootstrap3.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="genDataNOapplication.view.RunPageController">
+   <children>
+      <Button fx:id="runButton1" defaultButton="true" layoutX="950.0" layoutY="90.0" mnemonicParsing="false" onAction="#handleStartApplicationButton_ni" prefHeight="40.0" prefWidth="300.0" styleClass="primary" text="Create graph without publications">
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/icons/outline_play_circle_filled_white_white_24dp.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button> 
+      <Button fx:id="runButton2" defaultButton="true" layoutX="950.0" layoutY="140.0" mnemonicParsing="false" onAction="#handleStartApplicationButton_sv" prefHeight="40.0" prefWidth="300.0" styleClass="primary" text="Static Publications">
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/icons/outline_play_circle_filled_white_white_24dp.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="runButton3" defaultButton="true" layoutX="890.0" layoutY="620.0" mnemonicParsing="false" onAction="#handleStartApplicationButton_dv" prefHeight="40.0" prefWidth="350.0" styleClass="primary" text="Dynamic Publications">
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/icons/outline_play_circle_filled_white_white_24dp.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="helpButton" layoutX="150.0" layoutY="125.0" mnemonicParsing="false" onAction="#handleHelpButton" styleClass="info" text="Help">
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/icons/outline_help_outline_black_24dp.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <ProgressBar fx:id="progressIndicator" layoutX="190.0" layoutY="85.0" prefWidth="200.0" progress="0.0" visible="false" />
+      <Button fx:id="cancelButton" cancelButton="true" layoutX="245.0" layoutY="125.0" mnemonicParsing="false" onAction="#handleCancelButton" styleClass="danger" text="Cancel" visible="false">
+         <graphic>
+            <ImageView fitHeight="15.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/icons/outline_stop_white_24dp.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <ButtonBar fx:id="buttonsBar" layoutX="-20.0" layoutY="22.0" prefHeight="40.0" prefWidth="1400.0">
+         <buttons>
+            <Button fx:id="inputGeneratorButtonTab" mnemonicParsing="false" onAction="#handleInputGeneratorButtonTab" styleClass="first" text="Generate Graph">
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/icons/baseline_dashboard_black_24dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="inputFilesButtonTab" mnemonicParsing="false" onAction="#handleInputFilesButtonTab" styleClass="first" text="Input Files">
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/icons/download-multiple.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="userParametersButtonTab" mnemonicParsing="false" onAction="#handleUserParametersButtonTab" styleClass="middle" text="User Attributes">
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/icons/outline_group_black_24dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="profilesButtonTab" mnemonicParsing="false" onAction="#handleProfilesButtonTab" styleClass="middle" text="Profile Seeds">
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/icons/baseline_dashboard_black_24dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="communitiesButtonTab" mnemonicParsing="false" onAction="#handleCommunitiesButtonTab" styleClass="middle" text="Communities &amp; Profiles">
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/icons/outline_device_hub_black_24dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="outputFilesButtonTab" graphicTextGap="1.0" mnemonicParsing="false" onAction="#handleOutputFilesButtonTab" styleClass="middle" text="Output Files">
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/icons/upload-multiple.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="advancedButtonTab" mnemonicParsing="false" onAction="#handleAdvancedButtonTab" styleClass="middle" text="Advanced">
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/icons/outline_settings_black_24dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button disable="true" mnemonicParsing="false" styleClass="last" text="Generate Data">
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/icons/round_play_arrow_black_24dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="statisticsButton" mnemonicParsing="false" onAction="#handleStatisticsButton" prefHeight="32.0" prefWidth="92.0" text="Results">
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/icons/baseline_equalizer_black_24dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="statisticsPublicationsButton" mnemonicParsing="false" onAction="#handleStatisticsPublicationsButton" prefHeight="32.0" prefWidth="92.0" text="Results Publications">
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../resources/icons/baseline_equalizer_black_24dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </buttons>
+      </ButtonBar>
+      <Label layoutX="518.0" layoutY="72.0" prefHeight="53.0" prefWidth="445.0" text="Generate data">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="464.0" layoutY="78.0" opacity="0.72" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../resources/icons/baseline_play_circle_outline_black_24dp.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="479.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click on the different buttons to generate the social network graph data and to produce publications and data propagation. Once the program finishes the execution you can go to the results tab to see the statistics and the output files." wrappingWidth="420.322265625" />
+      <Button fx:id="homePageButton" layoutX="182.0" layoutY="403.0" mnemonicParsing="false" onAction="#handleMainPageButton" text="Return to home Page" visible="false">
+         <graphic>
+            <ImageView fitHeight="15.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/icons/baseline_home_black_24dpp.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="openButton" layoutX="430.0" layoutY="471.0" mnemonicParsing="false" onAction="#handleOpenButton" styleClass="success" text="Open Files Directory" visible="false">
+         <graphic>
+            <ImageView fitHeight="15.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/icons/baseline_folder_open_white_24dp.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TitledPane collapsible="false" layoutX="30.0" layoutY="200.0" prefHeight="350.0" prefWidth="310.0" styleClass="info" text="Main configuration">
+         <content>
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Text layoutX="7.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You can select which is the maximum number of publications that can be created at each interval of time. Is recommended to select numbers between 25 and 200." textAlignment="JUSTIFY" wrappingWidth="295.00000178813934" />
+                  <Label layoutX="10.0" layoutY="73.0" text="Num of publications" />
+                  <TextField fx:id="numPub" layoutX="140.0" layoutY="70" prefHeight="30.0" prefWidth="105.0" promptText="Select configuration" text="25"/>
+                  <Text layoutX="7.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You can decide how long the simulation will be. At every t there will be between 0 and k publications. Is recommended to select numbers between 10 and 100." textAlignment="JUSTIFY" wrappingWidth="295.00000178813934" />
+                  <Label layoutX="10" layoutY="173" text="Num of time" />
+                  <TextField fx:id="numTime" layoutX="140.0" layoutY="170" prefHeight="30.0" prefWidth="105.0" promptText="Select configuration" text="500"/>
+                  <Text layoutX="7.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You can select which is the maximum of users tagged in every publication. There will be between 0 and this number. Is recommended to select numbers between 0 and 30." textAlignment="JUSTIFY" wrappingWidth="295.00000178813934" />
+                  <Label layoutX="10" layoutY="273" text="Max users tagged" />
+                  <TextField fx:id="maxTagged" layoutX="140.0" layoutY="270" prefHeight="30.0" prefWidth="105.0" promptText="Select configuration" text="10"/>
+                </children>
+            </Pane>
+         </content>
+      </TitledPane>
+      
+      <TitledPane collapsible="false" layoutX="375.0" layoutY="200.0" prefHeight="235.0" prefWidth="310.0" styleClass="info" text="Type of publications configuration">
+         <content>
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Text layoutX="7.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You can select which is the probability of each type of publications and what is the weight of each type (between 0 and 1). All probabilities have to sum ~ 1." textAlignment="JUSTIFY" wrappingWidth="295.00000178813934" />
+                  <Label layoutX="20.0" layoutY="60.0" prefHeight="17.0" prefWidth="141.0" text="Image prob" />
+                  <TextField fx:id="image_prob" layoutX="20" layoutY="85" prefHeight="25.0" prefWidth="70.0" promptText="Select configuration" text="0.5">
+                  </TextField>
+                  <Label layoutX="120.0" layoutY="60.0" prefHeight="17.0" prefWidth="141.0" text="Video prob" />
+                  <TextField fx:id="video_prob" layoutX="120" layoutY="85" prefHeight="25.0" prefWidth="70.0" promptText="Select configuration" text="0.3">
+                  </TextField>
+                  <Label layoutX="220.0" layoutY="60.0" prefHeight="17.0" prefWidth="141.0" text="Text probab" />
+                  <TextField fx:id="text_prob" layoutX="220" layoutY="85" prefHeight="25.0" prefWidth="70.0" promptText="Select configuration" text="0.2">
+                  </TextField>
+                  <Label layoutX="20.0" layoutY="120.0" prefHeight="17.0" prefWidth="141.0" text="Image weight" />
+                  <TextField fx:id="image_weight" layoutX="20" layoutY="145" prefHeight="25.0" prefWidth="70.0" promptText="Select configuration" text="1.0">
+                  </TextField>
+                  <Label layoutX="120.0" layoutY="120.0" prefHeight="17.0" prefWidth="141.0" text="Video weight" />
+                  <TextField fx:id="video_weight" layoutX="120" layoutY="145" prefHeight="25.0" prefWidth="70.0" promptText="Select configuration" text="0.5">
+                  </TextField>
+                  <Label layoutX="220.0" layoutY="120.0" prefHeight="17.0" prefWidth="141.0" text="Text weight" />
+                  <TextField fx:id="text_weight" layoutX="220" layoutY="145" prefHeight="25.0" prefWidth="70.0" promptText="Select configuration" text="0.0">
+                  </TextField>
+                </children>
+            </Pane>
+         </content>
+      </TitledPane>
+      
+      <TitledPane collapsible="false" layoutX="375.0" layoutY="465.0" prefHeight="200.0" prefWidth="310.0" styleClass="info" text="Interaction configuration">
+         <content>
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Text layoutX="7.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You can decide which is the minimum score needed to interact. And which is the penalty for comment and share respect the like interaction. None of them can be>1." textAlignment="JUSTIFY" wrappingWidth="295.00000178813934" />
+                  <Label layoutX="20.0" layoutY="80.0" prefHeight="17.0" prefWidth="141.0" text="Minimum score" />
+                  <TextField fx:id="min_score" layoutX="20" layoutY="105" prefHeight="25.0" prefWidth="70.0" promptText="Select configuration" text="0.3">
+                  </TextField>
+                  <Label layoutX="120.0" layoutY="80.0" prefHeight="17.0" prefWidth="141.0" text="Penalty comment" />
+                  <TextField fx:id="comm_pen" layoutX="120" layoutY="105" prefHeight="25.0" prefWidth="70.0" promptText="Select configuration" text="0.22">
+                  </TextField>
+                  <Label layoutX="220.0" layoutY="80.0" prefHeight="17.0" prefWidth="141.0" text="Penalty Share" />
+                  <TextField fx:id="share_pen" layoutX="220" layoutY="105" prefHeight="25.0" prefWidth="70.0" promptText="Select configuration" text="0.25">
+                  </TextField>
+                </children>
+            </Pane>
+         </content>
+      </TitledPane>
+      
+      
+      
+      <TitledPane collapsible="false" layoutX="30.0" layoutY="560.0" prefHeight="105.0" prefWidth="310.0" styleClass="info" text="Penalties according to distance">
+         <content>
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="20.0" layoutY="5.0" prefHeight="17.0" prefWidth="141.0" text="Penalty dist 2" />
+                  <TextField fx:id="penalty2" layoutX="20" layoutY="25" prefHeight="25.0" prefWidth="125.0" promptText="Select configuration" text="0.1">
+                  </TextField>
+                  <Label layoutX="165.0" layoutY="5.0" prefHeight="17.0" prefWidth="141.0" text="Penalty dist 3" />
+                  <TextField fx:id="penalty3" layoutX="165" layoutY="25" prefHeight="25.0" prefWidth="125.0" promptText="Select configuration" text="0.15">
+                  </TextField>
+                </children>
+            </Pane>
+         </content>
+      </TitledPane>
+      
+      <TitledPane collapsible="false" layoutX="715.0" layoutY="200.0" prefHeight="405.0" prefWidth="310.0" styleClass="info" text="Probabilities configuration (only for manual mode)">
+         <content>
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Text layoutX="7.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="These probabilities are taken into account when deciding the score of each user-publication. In the automatic mode the function that determines it takes into account specific information like age of the users or distance. In the manual mode the score will be calculated in the same way for every age and distance.  All probabilities have to sum ~ 1." textAlignment="JUSTIFY" wrappingWidth="295.00000178813934" />
+                  <Label layoutX="20.0" layoutY="130.0" prefHeight="17.0" prefWidth="141.0" text="Alpha α" />
+                  <TextField fx:id="alpha" layoutX="20" layoutY="150" prefHeight="25.0" prefWidth="125.0" promptText="Select configuration" text="0.42">
+                  </TextField>
+                  <Label layoutX="165.0" layoutY="130.0" prefHeight="17.0" prefWidth="141.0" text="Beta β" />
+                  <TextField fx:id="beta" layoutX="165" layoutY="150" prefHeight="25.0" prefWidth="125.0" promptText="Select configuration" text="0.15">
+                  </TextField>
+                  <Label layoutX="20.0" layoutY="190.0" prefHeight="17.0" prefWidth="141.0" text="Mu μ" />
+                  <TextField fx:id="mu" layoutX="20" layoutY="210" prefHeight="25.0" prefWidth="125.0" promptText="Select configuration" text="0.28">
+                  </TextField>
+                  <Label layoutX="165.0" layoutY="190.0" prefHeight="17.0" prefWidth="141.0" text="Quality rate" />
+                  <TextField fx:id="qualRate" layoutX="165" layoutY="210" prefHeight="25.0" prefWidth="125.0" promptText="Select configuration" text="0.1">
+                  </TextField>
+                  <Label layoutX="20.0" layoutY="250.0" prefHeight="17.0" prefWidth="141.0" text="Type Rate" />
+                  <TextField fx:id="typeRate" layoutX="20" layoutY="270" prefHeight="25.0" prefWidth="125.0" promptText="Select configuration" text="0.05">
+                  </TextField>
+                  
+                  <Text layoutX="20.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Configure the mode that you want to use." textAlignment="JUSTIFY" wrappingWidth="286.9999870657921" />
+                  <RadioButton fx:id="automatic" layoutX="70.0" layoutY="330.0" mnemonicParsing="false" text="Automatic" />
+                  <RadioButton fx:id="manual" layoutX="170.0" layoutY="330.0" mnemonicParsing="false" text="Manual" />
+                </children>
+            </Pane>
+         </content>
+      </TitledPane>
+      
+      <TitledPane collapsible="false" layoutX="1065.0" layoutY="200.0" prefHeight="405.0" prefWidth="310.0" styleClass="info" text="Topic of publications configuration">
+         <content>
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Text layoutX="7.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You can decide the probability that each publication has to be of each specific topic. All probabilities have to sum ~ 1." textAlignment="JUSTIFY" wrappingWidth="295.00000178813934" />
+                  <Label layoutX="20.0" layoutY="60.0" prefHeight="17.0" prefWidth="141.0" text="Music Artist" />
+                  <TextField fx:id="music" layoutX="20" layoutY="80" prefHeight="25.0" prefWidth="125.0" promptText="Select configuration" text="0.2">
+                  </TextField>
+                  <Label layoutX="165.0" layoutY="60.0" prefHeight="17.0" prefWidth="141.0" text="Drink Brand" />
+                  <TextField fx:id="drink" layoutX="165" layoutY="80" prefHeight="25.0" prefWidth="125.0" promptText="Select configuration" text="0.02">
+                  </TextField>
+                  <Label layoutX="20.0" layoutY="120.0" prefHeight="17.0" prefWidth="141.0" text="TV Show" />
+                  <TextField fx:id="tv" layoutX="20" layoutY="140" prefHeight="25.0" prefWidth="125.0" promptText="Select configuration" text="0.15">
+                  </TextField>
+                  <Label layoutX="165.0" layoutY="120.0" prefHeight="17.0" prefWidth="141.0" text="Sports" />
+                  <TextField fx:id="sports" layoutX="165" layoutY="140" prefHeight="25.0" prefWidth="125.0" promptText="Select configuration" text="0.22">
+                  </TextField>
+                  <Label layoutX="20.0" layoutY="180.0" prefHeight="17.0" prefWidth="141.0" text="Animals" />
+                  <TextField fx:id="animals" layoutX="20" layoutY="200" prefHeight="25.0" prefWidth="125.0" promptText="Select configuration" text="0.14">
+                  </TextField>
+                  <Label layoutX="165.0" layoutY="180.0" prefHeight="17.0" prefWidth="141.0" text="Computer Games" />
+                  <TextField fx:id="computer" layoutX="165" layoutY="200" prefHeight="25.0" prefWidth="125.0" promptText="Select configuration" text="0.07">
+                  </TextField>
+                  <Label layoutX="20.0" layoutY="240.0" prefHeight="17.0" prefWidth="141.0" text="News and present" />
+                  <TextField fx:id="news" layoutX="20" layoutY="260" prefHeight="25.0" prefWidth="125.0" promptText="Select configuration" text="0.04">
+                  </TextField>
+                  <Label layoutX="165.0" layoutY="240.0" prefHeight="17.0" prefWidth="141.0" text="Food" />
+                  <TextField fx:id="food" layoutX="165" layoutY="260" prefHeight="25.0" prefWidth="125.0" promptText="Select configuration" text="0.07">
+                  </TextField>
+                  <Label layoutX="20.0" layoutY="300.0" prefHeight="17.0" prefWidth="141.0" text="Travels" />
+                  <TextField fx:id="travels" layoutX="20" layoutY="320" prefHeight="25.0" prefWidth="125.0" promptText="Select configuration" text="0.09">
+                  </TextField>
+                </children>
+            </Pane>
+         </content>
+      </TitledPane>
+   </children>
+</AnchorPane>
